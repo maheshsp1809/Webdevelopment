@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>India</title>
+    <style>
+      .border {
+        border: 10px solid #000;
+        width: 900px;
+        height: 600px;
+      }
+      .orange {
+        background-color: orangered;
+        width: 900px;
+        height: 200px;
+      }
+      .white {
+        background-color: white;
+        width: 900px;
+        height: 200px;
+        position: relative;
+      }
+      .white > .circle {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        border-radius: 50%;
+      }
+
+      .white > .circle::before,
+      .white > .circle::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: red;
+        border-radius: 0 100% 100% 0;
+        transform-origin: 100% 50%;
+      }
+
+      .white > .circle::after {
+        transform: rotate(15deg);
+      }
+
+      .white > .circle::before {
+        transform: rotate(-15deg);
+      }
+
+      .white > .circle::before:nth-child(n + 13) {
+        transform-origin: 0 50%;
+        transform: rotate(30deg);
+      }
+
+      .white > .circle::after:nth-child(n + 13) {
+        transform-origin: 100% 50%;
+        transform: rotate(30deg);
+      }
+
+      .green {
+        background-color: green;
+        width: 900px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="border">
+      <div class="orange"></div>
+      <div class="white">
+        <div class="circle"></div>
+      </div>
+      <div class="green"></div>
+    </div>
+  </body>
+</html>
