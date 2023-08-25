@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<!-- Task Creation Form -->
+<form action="/create" method="POST" class="task-form">
+  <input
+    type="text"
+    name="task"
+    placeholder="Enter a new task"
+    required
+    class="task-input"
+  />
+  <button type="submit" class="add-task-button">Add Task</button>
+</form>
+
+<!-- Task List -->
+<ul class="task-list">
+  <% tasks.forEach(task => { %>
+  <li class="task-item"><%= task %></li>
+  <% }); %>
+</ul>
+
+<%- include('partials/footer') %>
